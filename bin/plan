@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export DO_TOKEN=$(pass digitalocean-api-token)
+export SSH_FINGERPRINT=$(ssh-keygen -E md5 -lf ~/.ssh/id_rsa+digitalocean.pub | awk '{print $2}' | tail -c 48)
+export PUB_KEY=${HOME}/.ssh/id_rsa+digitalocean.pub
+export PRIV_KEY=${HOME}/.ssh/id_rsa+digitalocean
+
+terraform plan \
+  -var "do_token=${DO_TOKEN}" \
+  -var "pub_key=${PUB_KEY}" \
+  -var "priv_key=${PRIV_KEY}" \
+  -var "ssh_fingerprint=${SSH_FINGERPRINT}"

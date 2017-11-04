@@ -6,13 +6,17 @@ Infrastructure-as-code for Letto.
 
 - Terraform
 - [pass](https://www.passwordstore.org/)
-- AWS credentials with administrator rights stored in pass, under `aws/letto/terraform/id` and `aws/letto/terraform/secret`.
-- A S3 bucket named `terraform` to be used as Terraform's backend. It is recommended to have activated versioning on this bucket so that Terraform states are versioned by default.
-- Packer
+- DigitalOcean API token stored in _pass_ under `digitalocean-api-token`.
+- A SSH key under `~/.ssh/id_rsa+digitalocean` authorized on your DigitalOcean account.
 
 ## Howto
 
 ```
-terraform init
-bin/run_with_env terraform apply 2>&1 # or simply bin/deploy
+bin/init
+bin/plan
+bin/apply
+bin/state
+bin/destroy
 ```
+
+_This setup was made using [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-terraform-with-digitalocean)._

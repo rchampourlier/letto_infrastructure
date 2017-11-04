@@ -1,7 +1,0 @@
-#!/bin/sh
-
-AWS_ACCESS_KEY_ID=$(pass aws/letto/terraform/id) \
-  AWS_SECRET_ACCESS_KEY=$(pass aws/letto/terraform/secret) \
-  TF_VAR_AWS_ID=$(pass aws/letto/terraform/id) \
-  TF_VAR_AWS_SECRET=$(pass aws/letto/terraform/secret) \
-  $*

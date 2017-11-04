@@ -1,3 +1,0 @@
-#!/bin/bash
-
-./run_with_env terraform apply 2>&1
