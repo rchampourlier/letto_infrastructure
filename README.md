@@ -2,6 +2,10 @@
 
 Infrastructure-as-code for Letto.
 
+## Status
+
+[ABANDONED - REPLACED BY webtask.io] A serverless platform for developers with a great UX 
+
 ## Prerequisites
 
 - Terraform
